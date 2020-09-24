@@ -4,7 +4,6 @@
   <head>
     <meta charset="utf-8">
     <title>Générateur d'onglets</title>
-    <!-- <link rel="icon" href="" type="image/x-icon"> -->
     <meta name="author" content="Thomas Dargon"> 
     <meta name="description" content="A personal exercise to manipulate svg via javascript."> 
      
@@ -18,22 +17,22 @@
 
          <path class="cls-1" d="M4,38.5V5.2A2.79,2.79,0,0,1,6.87,2.5H171.13A2.79,2.79,0,0,1,174,5.2V38.5" 
          stroke-width="2.5" 
-         stroke="#b7b7b7" 
+         stroke="#000000" 
          fill="none" 
          stroke-miterlimit="10"
          fill-rule="evenodd"/>
          <text class="cls-2" 
-         transform="translate(40 28.65)"
+         transform="translate(67.5 28.65)"
          font-size="21px"
-         fill="#bbbbbb"
+         fill="#000000"
          font-family="Arial, Helvetica, sans-serif"
-         font-weight="300">ARCATEG</text>
+         font-weight="300">Titre</text>
   </svg>
 
   
   
 
-    
+    <form>
       <div class="border">
         <h2>Bordure:</h2>
         <label for="slider">Épaisseur:</label><input type="range" id="slider" value="2.5" min="0" max="5" step="0.5" >
@@ -42,22 +41,26 @@
   
       <div class="text">
           <h2>Texte:</h2>
-          <label for="texte">Texte:(20 chacartères maximum)</label><input type="text" id="texte" maxlength="20">
+          <label for="texte">Texte:(20 caractères maximum)</label><input type="text" id="texte" maxlength="20">
           <label for="couleur">Couleur: </label><input type="color" id='couleur' >
           <label for="translate">Position:</label><input type="range" id="translate" value="50" min="0" max="100" >
       </div>
+    </form>
+      
     
 
-    <div class="downloadSVG">
+    <div class="downloadSVG-button">
       <button>Download (.svg)</button>
     </div>
-    <div class="downloadPNG">
+    
+    <div class="downloadPNG-button">
       <button>Download (.png)</button>
     </div>
 
-    <canvas width="178" height="40">
-      
-    </canvas>
+    <div class="reset-button">
+      <button>Reset</button>
+    </div>
+
 
   </body>
 </html>
