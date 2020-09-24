@@ -34,8 +34,14 @@ textPosition.addEventListener('input', applyTextPosition);
 dlSvgButton.addEventListener('click', downloadSVG);
 dlPngButton.addEventListener('click', downloadPNG);
 resetButton.addEventListener('click', () => {
+    // clearing the form input fields
     form.reset();
-    
+    // resetting the svg to it's original parameters
+    border.setAttribute('stroke', '#000000');
+    border.setAttribute('stroke-width', '2.5');
+    textDisplayed.setAttribute('fill', '#000000');
+    textDisplayed.setAttribute('transform','translate(67.5 28.65)');
+    textDisplayed.textContent = 'Titre';
 })
 
 
