@@ -9,6 +9,7 @@ const borderColorInput = document.querySelector('#stroke');
 const textInput = document.querySelector('#texte');
 const textColorInput = document.querySelector('#couleur');
 const textPosition = document.querySelector('#translate');
+const textFont = document.querySelector('select');
 // inline svg
 const inlineSVG = document.querySelector('svg');
 const border = document.querySelector('.cls-1');
@@ -42,8 +43,13 @@ resetButton.addEventListener('click', () => {
     textDisplayed.setAttribute('fill', '#000000');
     textDisplayed.setAttribute('transform','translate(67.5 28.65)');
     textDisplayed.textContent = 'Titre';
+    textDisplayed.setAttribute('font-family', 'Arial, Helvetica, sans-serif');
 })
 
+/*
+ * CHANGE EVENT LISTENERS
+ */
+textFont.addEventListener('change', applyTextFont);
 
 /*
  * FUNCTIONS FOR STYLING THE INLINE SVG
@@ -64,6 +70,9 @@ function applyTextColor(){
 function applyTextPosition(){
     textDisplayed.setAttribute('transform', `translate( ${textPosition.value} 28.65)`);
 }
+function applyTextFont(){
+    textDisplayed.setAttribute('font-family', textFont.value)
+}
 
 
 /*
@@ -83,6 +92,7 @@ function downloadPNG() {
     let ctx = canvas.getContext('2d');
     let img = document.createElement('img');
     img.setAttribute('src', 'data:image/svg+xml; charset=utf8, ' + encodeURIComponent(inlineSVG.outerHTML));
+    // draw image onto canvas before downloading the canvas with URI data scheme.
     img.onload = () => {
         ctx.drawImage(img, 0, 0);
         let link = document.createElement('a');
